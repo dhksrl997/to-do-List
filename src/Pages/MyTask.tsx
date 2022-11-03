@@ -5,11 +5,11 @@ import AddTaskModal from "./AddTaskModal";
 import TaskList from '../TaskList.json';
 
 const MyTask = () => {
-    const [task, setTask]: any = useState([...TaskList.Task]);
+    const [task, setTask]: any = useState(localStorage.getItem('task') ? JSON.parse(localStorage.getItem('task') || '').Task : [...TaskList.Task]);
     const [showNewTaskModal, setShowNewTaskModal] = useState(false);
 
     useEffect(() => {
-        console.log('task = ', task);
+        localStorage.setItem('task', JSON.stringify({"Task": task}));
     }, [task])
 
     const cardStyle: any = {
@@ -31,13 +31,9 @@ const MyTask = () => {
             <div style={{width: '80%', margin: 'auto'}}>
                 <Space direction='vertical' size="middle" style={cardStyle}>
                     <Button type={'primary'} style={{float: 'right', margin: '1.5rem'}} onClick={openModal}>+</Button>
-                    {task.length > 0 && (
-                        <>
-                            {task.map((i: any) => (
-                                <TaskInfomation key={Math.random()} title={i.title} content={i.description}/>
-                            ))}
-                        </>
-                    )}
+                    {task.map((i: any) => (
+                        <TaskInfomation key={Math.random()} title={i.title} content={i.description}/>
+                    ))}
                 </Space>
             </div>
             <AddTaskModal visible={showNewTaskModal} onOk={() => console.log('on ok')}

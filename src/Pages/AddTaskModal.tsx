@@ -26,8 +26,7 @@ const AddTaskModal = ({visible, onOk, setVisiable, setTask, taskList}: any) => {
         taskFormat.checkList = [...checkList];
         setTaskFormat({...taskFormat})
         taskList.push(taskFormat)
-        console.log(`AddTaskModal.tsx:29 = `, taskList);
-        setTask({...taskList});
+        setTask([...taskList]);
     }
 
     const visiableOff = () => {
