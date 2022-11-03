@@ -1,0 +1,34 @@
+{
+  "Task": [
+    {
+      "title": "5wooya API 수정",
+      "description": "5wooya API 수정",
+      "status": "doing",
+      "checkList": [
+        {
+          "title": "QueryDSL 설정",
+          "status": "done"
+        },
+        {
+          "title": "인플루언서 쿼리작성",
+          "status": "doing"
+        }
+      ]
+    },
+    {
+      "title": "Pico 와이즈 트래커 데이터 연동",
+      "description": "피코에서 와이즈 트래커 데이터 보여주기",
+      "status": "doing",
+      "checkList": [
+        {
+          "title": "Raw 데이터 가져오기",
+          "status": "doing"
+        },
+        {
+          "title": "Pico Server API 작업",
+          "status": "doing"
+        }
+      ]
+    }
+  ]
+}
